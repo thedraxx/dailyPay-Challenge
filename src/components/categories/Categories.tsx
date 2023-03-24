@@ -1,25 +1,28 @@
 import { Datum, Inominiees } from '@/interface'
-import React, { useContext, useEffect } from 'react'
-import { Container, ContainerCategoryNomini, GridNominiees, TextNominiees, TextTitle, FloatButton, TextVote } from './CategoriesStyle';
+import React, { useContext } from 'react'
+import { Container, ContainerCategoryNomini, GridNominiees, TextNominiees, TextTitle, FloatButton, TextVote, ModalAlert } from './CategoriesStyle';
 import { Nominiees } from '../nominiees/Nominiees';
 import { NominateContext } from '../../context/NominateContext';
-
-
 
 interface Props {
     nominiess: Inominiees
 }
 
-
-
 export const Categories = ({ nominiess }: Props) => {
-    const { onSubmit } = useContext(NominateContext)
+    const { onSubmit, showModal } = useContext(NominateContext)
 
     const { data } = nominiess
 
-
     return (
         <Container suppressHydrationWarning>
+            {
+                showModal && (
+                    <ModalAlert>
+                        <h1>success</h1>
+                    </ModalAlert>
+                )
+            }
+
             <TextTitle>Awards 2021</TextTitle>
             {
                 data.map((nominee: Datum) => {

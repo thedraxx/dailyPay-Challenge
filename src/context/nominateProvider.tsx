@@ -10,8 +10,8 @@ export interface NominateState {
         Best_Supporting_Actor: string,
         Best_Supporting_Actress: string,
         Best_Visual_Effects: string,
-    }
-
+    },
+    showModal: boolean
 }
 
 const Nominate_INITIAL_STATE: NominateState = {
@@ -23,7 +23,8 @@ const Nominate_INITIAL_STATE: NominateState = {
         Best_Supporting_Actor: "",
         Best_Supporting_Actress: "",
         Best_Visual_Effects: "",
-    }
+    },
+    showModal: false
 };
 
 interface Props {
@@ -33,7 +34,6 @@ interface Props {
 export const NominateProvider = ({ children }: Props) => {
 
     const [state, dispatch] = useReducer(nominateReducer, Nominate_INITIAL_STATE)
-
 
     const handleState = (nomination: string, actionToNominate: string) => {
         dispatch({
@@ -47,12 +47,29 @@ export const NominateProvider = ({ children }: Props) => {
 
     const onSubmit = () => {
         if (state.nominations.Best_Actor !== "" && state.nominations.Best_Actress !== "" && state.nominations.Best_Director !== "" && state.nominations.Best_Picture !== "" && state.nominations.Best_Supporting_Actor !== "" && state.nominations.Best_Supporting_Actress !== "" && state.nominations.Best_Visual_Effects !== "") {
+
             console.log(state.nominations)
-            return true
+            dispatch({
+                type: "[Ui] - showModal",
+                payload: true
+            })
+
+            setTimeout(() => {
+                dispatch({
+                    type: "[Ui] - showModal",
+                    payload: false
+                })
+            }, 3000);
+
+            return false;
         }
         else {
             console.log('no se subio')
-            return false
+            dispatch({
+                type: "[Ui] - showModal",
+                payload: false
+            })
+            return false;
         }
     }
 
@@ -60,7 +77,7 @@ export const NominateProvider = ({ children }: Props) => {
         <NominateContext.Provider value={{
             ...state,
             handleState,
-            onSubmit
+            onSubmit,
         }}>
             {children}
         </NominateContext.Provider>

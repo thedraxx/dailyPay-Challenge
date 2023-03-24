@@ -10,6 +10,7 @@ export interface NominateCdasasdontextProps {
         Best_Supporting_Actress: string,
         Best_Visual_Effects: string,
     },
+    showModal: boolean
 
     handleState: (nomination: string, actionToNominate: string) => void
     onSubmit: () => boolean

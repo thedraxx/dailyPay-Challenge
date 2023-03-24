@@ -1,6 +1,22 @@
 import { colors } from "@/utilities/colors";
 import styled from "styled-components";
 
+export const ModalAlert = styled.div`
+  position: fixed;
+  top: 0;
+  margin-top: ${`calc(50vh - 250px)`};
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  border-radius: 50px;
+`;
+
 export const TextTitle = styled.h1`
   font-size: 2rem;
   font-weight: 700;
