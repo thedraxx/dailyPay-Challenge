@@ -1,4 +1,4 @@
-# NEXT.JS Flybondi - Challenge - Full Stack - IMPORTANT!!! - READ ME
+
 <h1 align="center"> Hello Everyone 🪐👋</h1>
 
 ## 🤖 About App:
@@ -8,8 +8,7 @@ This is a DailyPay-Challenge using React + NextJS + Typescript, you can see the 
 
 ## 🎥 A little video of the WEB:
 
-
-
+https://user-images.githubusercontent.com/55867157/227643903-e97cb335-1972-4586-8f0d-3e36626affe9.mp4
 
 <br> The app is made with the following technologies:</br>
 
