@@ -7,7 +7,7 @@ export const ModalAlert = styled.div`
   margin-top: ${`calc(50vh - 250px)`};
   justify-content: center;
   align-items: center;
-  width: 500px;
+  width: 800px;
   height: 500px;
   background-color: rgba(0, 0, 0, 0.9);
   display: flex;
@@ -15,6 +15,49 @@ export const ModalAlert = styled.div`
   align-items: center;
   z-index: 999;
   border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+`;
+
+export const ContainerAlert = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: ${colors.background};
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+`;
+
+export const TextAlert = styled.h1`
+  font-size: 2rem;
+  font-weight: 700;
+  color: ${colors.fontcolor};
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0;
+`;
+
+export const TextAlertNominations = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: ${colors.fontcolor};
+  text-align: center;
+  margin: 0 auto;
+`;
+
+export const TextMoviesSelected = styled.h2`
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: ${colors.hovercolor};
+  text-align: center;
+  margin: 1px auto;
 `;
 
 export const TextTitle = styled.h1`
